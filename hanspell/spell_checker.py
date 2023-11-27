@@ -44,12 +44,7 @@ def check(text):
     if len(text) > 500:
         return Checked(result=False)
 
-    payload = {
-        '_callback': 'jQuery11240003383472025177525_1680133565087',
-        'q': text,
-        'where': 'nexearch',
-        'color_blindness': 0
-    }
+    payload = { 'passportKey': '880af1461495c9169ca22466896beac17fd71d7a', '_callback': 'jQuery1124024353107794965956_1697593724680', 'q': text, 'color_blindness': '0' }
 
     headers = {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
@@ -62,7 +57,9 @@ def check(text):
 
     r = r.text[44:-2]
 
-    data = json.loads(r)
+    json_data = re.search(r'\((.*)\)', r.text).group(1)
+    # Parse the JSON data into a Python dictionary
+    data = json.loads(json_data)
     html = data['message']['result']['html']
     result = {
         'result': True,
