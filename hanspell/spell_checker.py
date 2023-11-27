@@ -45,8 +45,10 @@ def check(text):
         return Checked(result=False)
 
     payload = {
-        'color_blindness': '0',
-        'q': text
+        '_callback': 'jQuery11240003383472025177525_1680133565087',
+        'q': text,
+        'where': 'nexearch',
+        'color_blindness': 0
     }
 
     headers = {
