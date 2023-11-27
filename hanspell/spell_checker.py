@@ -44,7 +44,10 @@ def check(text):
     if len(text) > 500:
         return Checked(result=False)
 
-    payload = { 'passportKey': '880af1461495c9169ca22466896beac17fd71d7a', '_callback': 'jQuery1124024353107794965956_1697593724680', 'q': text, 'color_blindness': '0' }
+    payload = {
+        '_callback': 'window.__jindo2_callback._spellingCheck_0',
+        'q': text
+    }
 
     headers = {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
