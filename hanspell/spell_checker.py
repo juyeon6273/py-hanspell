@@ -62,9 +62,7 @@ def check(text):
 
     r = r.text[44:-2]
 
-    json_data = re.search(r'\((.*)\)', r.text).group(1)
-    # Parse the JSON data into a Python dictionary
-    data = json.loads(json_data)
+    data = json.loads(r)
     html = data['message']['result']['html']
     result = {
         'result': True,
